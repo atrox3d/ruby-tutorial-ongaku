@@ -1,7 +1,7 @@
 require 'yaml'
-require 'ongaku/ui/text'
-require 'ongaku/ui/gui'
-require 'ongaku/ui/web'
+require_relative 'ui/text'
+require_relative 'ui/gui'
+require_relative 'ui/web'
 
 module Ongaku
 	class Ui
@@ -23,6 +23,7 @@ module Ongaku
 
 				else
 					puts "interfaccia non implementata"
+					exit
 			end
 			interfaccia.avvia
 		end
@@ -34,9 +35,9 @@ module Ongaku
 			$archivio.sort!
 		end
 
-		def salva_cd 
-			if @modifica 
-				open(NOMEFILE, 'w') do |file| 
+		def salva_cd
+			if @modifica
+				open(NOMEFILE, 'w') do |file|
 					$archivio.each { |cd| YAML::dump cd, file }
 				end
 			end
@@ -48,7 +49,7 @@ module Ongaku
 			$archivio << nuovo_cd
 			$archivio.sort!
 		end
-		
+
 		def elimina_cd index
 			@modifica = true
 			$archivio.slice! index
