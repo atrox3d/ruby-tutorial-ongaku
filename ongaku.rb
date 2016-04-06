@@ -1,5 +1,5 @@
 require 'getoptlong'
-require_relative 'ongaku/ui'
+require './ongaku/ui.rb'
 
 module Ongaku
 	NOME = "ongaku"

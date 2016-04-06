@@ -1,7 +1,7 @@
 require 'yaml'
-require_relative 'ui/text'
-require_relative 'ui/gui'
-require_relative 'ui/web'
+require './ongaku/ui/text'
+require './ongaku/ui/gui'
+require './ongaku/ui/web'
 
 module Ongaku
 	class Ui
