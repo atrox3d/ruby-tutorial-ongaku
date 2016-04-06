@@ -2,6 +2,7 @@ require 'yaml'
 require './ongaku/ui/text'
 require './ongaku/ui/gui'
 require './ongaku/ui/web'
+require './ongaku/cd'
 
 module Ongaku
 	class Ui
@@ -35,7 +36,7 @@ module Ongaku
 			$archivio.sort!
 		end
 
-		def salva_cd
+		def self.salva_cd
 			if @modifica
 				open(NOMEFILE, 'w') do |file|
 					$archivio.each { |cd| YAML::dump cd, file }
